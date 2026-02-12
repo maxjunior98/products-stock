@@ -1,5 +1,12 @@
-def openJson():
-    print("Open Json")
+import json
 
-def saveJson():
-    print("Save Json")
+def openJson(path):
+    with open(path) as data:
+        d = json.load(data)
+        return d
+
+def saveData(path, data):
+    file = open(path, 'w')
+    file.write(json.dumps(data))
+    file.close()
+
